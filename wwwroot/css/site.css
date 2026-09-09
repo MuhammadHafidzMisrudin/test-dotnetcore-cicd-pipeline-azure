@@ -1,0 +1,119 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+/* Dashboard */
+.stat-card {
+  border: none;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+.stat-label {
+  font-size: 0.85rem;
+  color: #6c757d;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.stat-value {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-top: 0.25rem;
+}
+
+.bar-chart {
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+  height: 220px;
+  padding-top: 1.5rem;
+}
+
+.bar-chart-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  flex: 1;
+  height: 100%;
+}
+
+.bar-chart-value {
+  font-size: 0.7rem;
+  color: #6c757d;
+  margin-bottom: 0.35rem;
+  white-space: nowrap;
+}
+
+.bar-chart-bar {
+  width: 100%;
+  max-width: 40px;
+  background: linear-gradient(180deg, #4f8cff, #2563eb);
+  border-radius: 4px 4px 0 0;
+  min-height: 4px;
+}
+
+.bar-chart-label {
+  margin-top: 0.5rem;
+  font-size: 0.8rem;
+  color: #6c757d;
+}
+
+.status-badge {
+  text-transform: capitalize;
+}
+
+.status-completed {
+  background-color: #198754 !important;
+  color: #fff;
+}
+
+.status-processing {
+  background-color: #0dcaf0 !important;
+  color: #062c33;
+}
+
+.status-shipped {
+  background-color: #0d6efd !important;
+  color: #fff;
+}
+
+.status-cancelled {
+  background-color: #dc3545 !important;
+  color: #fff;
+}
+
+.progress-bar.status-completed {
+  background-color: #198754;
+}
+
+.progress-bar.status-processing {
+  background-color: #0dcaf0;
+}
+
+.progress-bar.status-shipped {
+  background-color: #0d6efd;
+}
+
+.progress-bar.status-cancelled {
+  background-color: #dc3545;
+}
