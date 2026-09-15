@@ -1,0 +1,21 @@
+# Auto detect text files and normalize line endings
+* text=auto
+
+###############################################################################
+# GitHub Linguist language statistics overrides
+#
+# This repository is a C# / ASP.NET Core Razor Pages app. Front-end assets
+# (vendored libraries, CSS, JS, Razor markup) were skewing the language
+# breakdown toward HTML/CSS/JS. Exclude them so stats reflect C#.
+###############################################################################
+
+# Third-party vendored front-end libraries
+wwwroot/lib/** linguist-vendored
+
+# Project-owned front-end assets — exclude from language stats
+wwwroot/css/** linguist-detectable=false
+wwwroot/js/** linguist-detectable=false
+*.cshtml linguist-detectable=false
+*.html linguist-detectable=false
+*.css linguist-detectable=false
+*.js linguist-detectable=false
