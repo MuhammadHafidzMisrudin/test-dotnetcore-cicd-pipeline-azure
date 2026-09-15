@@ -59,7 +59,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Role of the user
-        run: echo "Role: ${{ inputs.username }}!"
+        run: echo "Role, ${{ inputs.username }}!"
 
       - name: Deploy environment
         run: echo "Deploying to the ${{ inputs.environment }} environment."
