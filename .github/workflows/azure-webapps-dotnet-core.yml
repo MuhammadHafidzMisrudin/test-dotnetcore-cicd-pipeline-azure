@@ -25,27 +25,28 @@ env:
   DOTNET_VERSION: '8.0.x'             # set this to the .NET Core version to use
 
 on:
-  # push:
-  #   branches: [ "main" ]
+  push:
+    branches: [ "main" ]
   workflow_dispatch:
-    username:
-      description: 'Role of the user initiating the workflow? [Developer/DevOps]'
-      required: true
-      default: 'Developer'    # default role of the user initiating the workflow
-      type: string
-    environment:
-      description: 'Target deployment environment'
-      required: true
-      type: choice
-      options:
-        - development
-        - staging
-        - production
-    run_tests:
-      description: 'Run automated tests?'
-      required: true
-      default: true
-      type: boolean
+    inputs:
+      username:
+        description: 'Role of the user initiating the workflow? [Developer/DevOps]'
+        required: true
+        default: 'Developer'    # default role of the user initiating the workflow
+        type: string
+      environment:
+        description: 'Target deployment environment'
+        required: true
+        type: choice
+        options:
+          - development
+          - staging
+          - production
+      run_tests:
+        description: 'Run automated tests?'
+        required: true
+        default: true
+        type: boolean
 
 permissions:
   contents: read
@@ -56,6 +57,16 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+
+      - name: Role of the user
+        run: echo "Role: ${{ inputs.username }}!"
+
+      - name: Deploy environment
+        run: echo "Deploying to the ${{ inputs.environment }} environment."
+
+      - name: Run conditional tests
+        if: ${{ inputs.run_tests == true }}
+        run: echo "Executing test suite..."
 
       - name: Set up .NET Core
         uses: actions/setup-dotnet@v4
