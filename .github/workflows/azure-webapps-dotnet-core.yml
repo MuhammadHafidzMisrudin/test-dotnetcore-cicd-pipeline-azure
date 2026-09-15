@@ -28,6 +28,24 @@ on:
   push:
     branches: [ "main" ]
   workflow_dispatch:
+    username:
+      description: 'Role of the user initiating the workflow? [Developer/DevOps]'
+      required: true
+      default: 'Developer'    # default role of the user initiating the workflow
+      type: string
+    environment:
+      description: 'Target deployment environment'
+      required: true
+      type: choice
+      options:
+        - development
+        - staging
+        - production
+    run_tests:
+      description: 'Run automated tests?'
+      required: true
+      default: true
+      type: boolean
 
 permissions:
   contents: read
